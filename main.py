@@ -101,3 +101,11 @@ for note in notes:
 output_dir = "output"
 if not os.path.exists(output_dir):
         os.makedirs(output_dir)
+    
+name = say_this.replace(" ", "_")
+file_path = os.path.join(output_dir, name + '.wav')
+write_rate = int(sample_rate*speed_multiplier)
+write(file_path, write_rate, base.astype(np.int16))
+playsound(file_path)
+# for file in files:
+#     playsound(voice_path + "/" + file)
