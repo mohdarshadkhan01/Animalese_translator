@@ -83,3 +83,21 @@ cursor += last_note_length
 end_pad = sample_rate * 1.0
 buffer_length = int(cursor + end_pad)
 base = np.zeros(buffer_length, dtype=np.int16)
+
+for note in notes:
+    char = note[0]
+    cursor = note[1]
+    if char not in sounds:
+        continue
+    sound = sounds[char]
+    start = int(cursor)
+    end = int(start + sound.shape[0])
+    print(f"Adding {char} from {start} to {end}")
+    selection = base[start:end]
+    print(selection.shape)
+    print(sound.shape)
+    base[start:end] += sound
+
+output_dir = "output"
+if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
