@@ -16,3 +16,6 @@ Modules required to be able to use the script successfully
 and how to install them.
 (If there are a lot of them, including a `requirements.txt` file will work better.)
 [print](https://docs.python.org/3/library/pprint.html)
+## 🌟 How to run
+<!--Remove the below lines and add yours -->
+Steps on how to run the script along with suitable examples.
